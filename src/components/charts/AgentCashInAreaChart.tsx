@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
 
@@ -11,11 +12,11 @@ import {
 import {
   ChartContainer,
   ChartLegend,
- // This import is now technically not needed, but it's fine to keep
+  ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-import type {
+import type{
   ChartConfig,
 } from "@/components/ui/chart"
 import {
@@ -28,23 +29,28 @@ import {
 
 export const description = "An interactive area chart"
 
+
+
 const chartConfig = {
-  cashIn: {
-    label: "Cash In",
-    color: "var(--chart-2)",
+  visitors: {
+    label: "Visitors",
   },
-  cashOut: {
-    label: "Cash Out",
+  desktop: {
+    label: "Desktop",
     color: "var(--chart-1)",
+  },
+  mobile: {
+    label: "Mobile",
+    color: "var(--chart-2)",
   },
 } satisfies ChartConfig
 
-export function AgentCashInAreaChart({ chartData }: any) {
+export function AgentCashInAreaChart({chartData} : any) {
   const [timeRange, setTimeRange] = React.useState("90d")
 
   const filteredData = chartData.filter((item: any) => {
     const date = new Date(item.date)
-    const referenceDate = new Date()
+    const referenceDate = new Date("2024-06-30")
     let daysToSubtract = 90
     if (timeRange === "30d") {
       daysToSubtract = 30
@@ -53,7 +59,7 @@ export function AgentCashInAreaChart({ chartData }: any) {
     }
     const startDate = new Date(referenceDate)
     startDate.setDate(startDate.getDate() - daysToSubtract)
-    return date >= startDate && date <= referenceDate
+    return date >= startDate
   })
 
   return (
@@ -62,12 +68,12 @@ export function AgentCashInAreaChart({ chartData }: any) {
         <div className="grid flex-1 gap-1">
           <CardTitle>Cash In / Cash Out Per Date</CardTitle>
           <CardDescription>
-            Total cash in and cash out transactions by date.
+            Cash in and Cash Out per Date. Green one is cash in and blue one is cash out.
           </CardDescription>
         </div>
         <Select value={timeRange} onValueChange={setTimeRange}>
           <SelectTrigger
-            className="w-[160px] rounded-lg sm:ml-auto"
+            className="hidden w-[160px] rounded-lg sm:ml-auto sm:flex"
             aria-label="Select a value"
           >
             <SelectValue placeholder="Last 3 months" />
@@ -92,27 +98,27 @@ export function AgentCashInAreaChart({ chartData }: any) {
         >
           <AreaChart data={filteredData}>
             <defs>
-              <linearGradient id="fillCashOut" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
-                  stopColor="var(--color-cashOut)"
+                  stopColor="var(--color-desktop)"
                   stopOpacity={0.8}
                 />
                 <stop
                   offset="95%"
-                  stopColor="var(--color-cashOut)"
+                  stopColor="var(--color-desktop)"
                   stopOpacity={0.1}
                 />
               </linearGradient>
-              <linearGradient id="fillCashIn" x1="0" y1="0" x2="0" y2="1">
+              <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
                 <stop
                   offset="5%"
-                  stopColor="var(--color-cashIn)"
+                  stopColor="var(--color-mobile)"
                   stopOpacity={0.8}
                 />
                 <stop
                   offset="95%"
-                  stopColor="var(--color-cashIn)"
+                  stopColor="var(--color-mobile)"
                   stopOpacity={0.1}
                 />
               </linearGradient>
@@ -149,19 +155,18 @@ export function AgentCashInAreaChart({ chartData }: any) {
             <Area
               dataKey="cashIn"
               type="natural"
-              fill="url(#fillCashIn)"
-              stroke="var(--color-cashIn)"
+              fill="url(#fillMobile)"
+              stroke="var(--color-mobile)"
               stackId="a"
             />
             <Area
               dataKey="cashOut"
               type="natural"
-              fill="url(#fillCashOut)"
-              stroke="var(--color-cashOut)"
+              fill="url(#fillDesktop)"
+              stroke="var(--color-desktop)"
               stackId="a"
             />
-            {/* --- THE FINAL FIX --- */}
-            <ChartLegend />
+            <ChartLegend content={<ChartLegendContent />} />
           </AreaChart>
         </ChartContainer>
       </CardContent>

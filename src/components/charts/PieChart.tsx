@@ -33,11 +33,13 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+interface ChartDataItem {
+  type: keyof typeof chartConfig
+  amount: number
+}
+
 interface IPieChartProps {
-  chartData: {
-    type: keyof typeof chartConfig
-    amount: number
-  }[]
+  chartData: ChartDataItem[]
   title?: string
   description?: string
 }
@@ -75,9 +77,10 @@ export function ChartPieLabelList({
                 dataKey="type"
                 className="fill-background"
                 fontSize={12}
-                formatter={(value) => {
-                  if (typeof value === "string" && value in chartConfig) {
-                    return chartConfig[value as keyof typeof chartConfig]?.label
+                formatter={(value: string) => {
+                  // ✅ Type-safe formatter
+                  if (value in chartConfig) {
+                    return chartConfig[value as keyof typeof chartConfig].label
                   }
                   return value
                 }}

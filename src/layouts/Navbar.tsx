@@ -24,7 +24,7 @@ export default function Navbar() {
   const dispatch = useAppDispatch()
 
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { name, email, role } = data?.data || {}
 
   // Dynamic dashboard url

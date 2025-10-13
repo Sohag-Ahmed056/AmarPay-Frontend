@@ -11,7 +11,7 @@ import {
 import {
   ChartContainer,
   ChartLegend,
-  ChartLegendContent, // This import is now technically not needed, but it's fine to keep
+ // This import is now technically not needed, but it's fine to keep
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"

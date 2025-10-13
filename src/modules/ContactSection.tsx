@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import { Mail, Phone, Globe, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, CheckCircle2 } from "lucide-react";
 
 interface Contact2Props {
   title?: string;

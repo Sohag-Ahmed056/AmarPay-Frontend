@@ -1,6 +1,7 @@
 import Logo from "@/components/Logo"
 import { footerMenu1, footerMenu2 } from "@/data/footerLinkData"
-import { Facebook, Github, Linkedin, Youtube } from "lucide-react"
+
+import { SiFacebook, SiGithub } from "react-icons/si" // ✅ Use react-icons for brand logos
 import { Link } from "react-router-dom"
 
 const Footer = () => {
@@ -17,12 +18,13 @@ const Footer = () => {
           </p>
           <div className="flex gap-4 mt-4">
             <Link to="https://www.facebook.com/sohag.shisir.5" target="_blank" className="hover:scale-110 transition-transform">
-              <Facebook className="w-6 h-6 text-white hover:text-blue-400" />
+              <SiFacebook className="w-6 h-6 text-white hover:text-blue-400" />
             </Link>
             
             <Link to="https://github.com/Sohag-Ahmed056" target="_blank" className="hover:scale-110 transition-transform">
-              <Github className="w-6 h-6 text-white hover:text-gray-300" />
+              <SiGithub className="w-6 h-6 text-white hover:text-gray-300" />
             </Link>
+
             
           </div>
         </div>
@@ -64,7 +66,9 @@ const Footer = () => {
         {/* Newsletter or CTA */}
         <div className="hidden lg:block">
           <h3 className="text-lg font-semibold mb-4 border-l-4 border-white pl-3">Stay Connected</h3>
-          <p className="text-gray-200 text-sm mb-4">Subscribe to get updates on offers and new features.</p>
+          <p className="text-gray-200 text-sm mb-4">
+            Subscribe to get updates on offers and new features.
+          </p>
           <form className="flex">
             <input
               type="email"

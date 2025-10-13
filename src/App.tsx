@@ -1,19 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import CommonLayout from './components/layout/CommonLayout'
-import { Outlet } from 'react-router'
+import Navbar from './layouts/Navbar'
 
 function App() {
 
-
   return (
-    
-    <CommonLayout>
-
-      <Outlet />
-    </CommonLayout>
+    <>
+      <Navbar/>
+    </>
   )
 }
 

@@ -1,8 +1,14 @@
 
+import AboutSection from "@/modules/about/AboutSection"
+
 
 const About = () => {
   return (
-    <div>About</div>
+    <div>
+     
+      <AboutSection/>
+     
+    </div>
   )
 }
 

@@ -75,46 +75,45 @@ Built with industry-standard authentication, modular backend design, and a clean
 
 ## 📁 Project Structure
 
-### Frontend
-
 amar-pay-frontend/
+│
 ├── public/
-│   └── favicon.ico
 │
 ├── src/
-│   ├── assets/           # Static assets like images, icons, and logos
-│   ├── components/       # Reusable UI components (Buttons, Cards, Inputs, etc.)
-│   ├── config/           # Configuration files (e.g., API base URLs, env settings)
-│   ├── constants/        # Constant variables and enums
-│   ├── data/             # Static data, mock data, or seed content
-│   ├── hooks/            # Custom React hooks
-│   ├── layouts/          # Page layout components (DashboardLayout, AuthLayout, etc.)
-│   ├── lib/              # Utility libraries and third-party helpers
-│   ├── modules/          # Feature-based modules (Auth, Payments, Users, etc.)
-│   ├── pages/            # Route-based page components
-│   ├── providers/        # Context providers (ThemeProvider, AuthProvider, etc.)
-│   ├── redux/            # Redux Toolkit store and feature slices
-│   ├── routes/           # Application route definitions and private/public routes
-│   ├── types/            # TypeScript type definitions and interfaces
-│   ├── utils/            # Helper functions (formatters, validators, etc.)
+│   ├── assets/            # Images, icons, and static resources
+│   ├── components/        # Reusable UI components (buttons, cards, modals, etc.)
+│   ├── config/            # Global configuration files (API URLs, environment setup)
+│   ├── constants/         # Constant values and enums
+│   ├── data/              # Static or mock data
+│   ├── hooks/             # Custom React hooks
+│   ├── layouts/           # Layout components (DashboardLayout, AuthLayout, etc.)
+│   ├── lib/               # Shared libraries or helper functions
+│   ├── modules/           # Feature-based modules (Auth, Payment, User, etc.)
+│   ├── pages/             # Route-level pages
+│   ├── providers/         # Context or theme providers
+│   ├── redux/             # Redux store setup and slices (RTK Query, etc.)
+│   ├── routes/            # Application routes and protected route logic
+│   ├── types/             # TypeScript type definitions and interfaces
+│   ├── utils/             # Utility functions (formatters, validators, etc.)
 │   │
 │   ├── App.css
-│   ├── App.tsx           # Main app component
+│   ├── App.tsx            # Root app component
 │   ├── index.css
-│   ├── main.tsx          # Entry point rendering the root app
-│   └── vite-env.d.ts     # Vite environment type declarations
+│   ├── main.tsx           # Application entry point
+│   └── vite-env.d.ts      # Vite environment type declarations
 │
 ├── .gitignore
 ├── README.md
-├── bun.lock              # (if using Bun as package manager)
-├── components.json       # shadcn/ui configuration
-├── eslint.config.js      # ESLint configuration
-├── index.html            # Main HTML file
-├── package.json          # Project dependencies and scripts
-├── package-lock.json     # NPM lock file
-├── tsconfig.app.json     # TypeScript config for app files
-├── tsconfig.json         # Root TypeScript configuration
-└── tsconfig.node.json    # Node environment TypeScript configuration
+├── bun.lock               # Bun package manager lockfile (if used)
+├── components.json        # shadcn/ui configuration file
+├── eslint.config.js       # ESLint configuration
+├── index.html             # Main HTML template
+├── package-lock.json
+├── package.json           # Project metadata and dependencies
+├── tsconfig.app.json      # TypeScript configuration for app
+├── tsconfig.json          # Root TypeScript config
+└── tsconfig.node.json     # Node-specific TypeScript config
+
 
 ## Clone Repository:
 https://github.com/Sohag-Ahmed056/AmarPay-Frontend.git

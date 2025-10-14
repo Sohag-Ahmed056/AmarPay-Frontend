@@ -125,8 +125,28 @@ amar-pay-frontend/
 ```
 ## Clone Repository:
 https://github.com/Sohag-Ahmed056/AmarPay-Frontend.git
-## RUN COMMAND:
+Of course, here are those commands formatted for a `README.md` file.
+
+-----
+
+## 🚀 Getting Started
+
+Follow these steps to get the development environment running on your local machine.
+
+### 1\. Install Dependencies
+
+First, open your terminal in the project's root directory. Run the following command to install all the required packages using **Bun**.
+
+```bash
 bun install
+```
+
+### 2\. Run the Development Server
+
+After the installation is complete, use this command to start the local development server. 
+
+```bash
 bun run dev
+```
 
 

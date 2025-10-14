@@ -71,13 +71,6 @@ Built with industry-standard authentication, modular backend design, and a clean
 | **Deployment** | Vercel (Frontend + Backend), MongoDB Atlas |
 | **Others** | Zod (Validation), Axios, Passport.js |
 
----
-
-## 📁 Project Structure
-
-Of course, here is the folder structure formatted for a `README.md` file.
-
------
 
 ## 📁 Project Structure
 

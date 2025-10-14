@@ -118,7 +118,7 @@ amar-pay-frontend/
 ```
 ## Clone Repository:
 https://github.com/Sohag-Ahmed056/AmarPay-Frontend.git
-Of course, here are those commands formatted for a `README.md` file.
+
 
 -----
 

@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# 💳 AmarPay — Modern Online Payment Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AmarPay is a secure and modern online payment solution built using the **MERN stack (MongoDB, Express.js, React, Node.js)**.  
+It enables users to make transactions, manage their wallets, and track payment histories — with role-based admin access and JWT authentication.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## React Compiler
+🔗 **Frontend:** [https://amar-pay-frontend.vercel.app](https://amar-pay-frontend.vercel.app)  
+🔗 **Backend API:** [https://amar-pay-backend-api.vercel.app](https://amar-pay-backend-api.vercel.app)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📋 Table of Contents
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. [Overview](#-overview)
+2. [Features](#-features)
+3. [Tech Stack](#-tech-stack)
+4. [Project Structure](#-project-structure)
+5. [Environment Variables](#️-environment-variables)
+6. [Setup Instructions](#️-setup-instructions)
+7. [API Overview](#-api-overview)
+8. [Deployment](#-deployment)
+9. [License](#-license)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🧭 Overview
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+AmarPay allows users to:
+- Register, log in, and manage profiles.
+- Send and receive payments securely.
+- View transaction history.
+- Admins can manage users and monitor the system.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Built with industry-standard authentication, modular backend design, and a clean, responsive frontend UI.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ✨ Features
+
+### 👤 User
+- Register and log in using JWT authentication.
+- Update personal information and view profile.
+- Send, receive, and view payment transactions.
+- Check balance and wallet activity in real time.
+
+### 🛠️ Admin
+- Role-based access (admin / user).
+- Manage users and transactions.
+- Dashboard with analytics and reports.
+
+### 💡 Other Features
+- Secure password hashing with **bcrypt**.
+- Token-based authentication with **JWT**.
+- Global error handling middleware.
+- Axios interceptors with automatic token refresh.
+- Responsive UI built with **shadcn/ui** + **TailwindCSS**.
+
+---
+
+## 🧰 Tech Stack
+
+| Category | Technologies |
+|-----------|---------------|
+| **Frontend** | React, TypeScript, Redux Toolkit Query, TailwindCSS, shadcn/ui |
+| **Backend** | Node.js, Express.js, TypeScript, Mongoose |
+| **Database** | MongoDB (Mongoose ORM) |
+| **Auth** | JWT (Access + Refresh Tokens), bcrypt |
+| **Deployment** | Vercel (Frontend + Backend), MongoDB Atlas |
+| **Others** | Zod (Validation), Axios, Passport.js |
+
+---
+
+## 📁 Project Structure
+
+### Frontend
